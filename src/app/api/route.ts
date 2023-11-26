@@ -1,19 +1,6 @@
 import  stripe  from "@/lib/stripe"
 import Stripe from "stripe"
 
-
-export async function dataProducts() {
-  await stripe.products.list().then(async (product: any) => {
-    try{
-      const productCreated = await stripe.products.create(product)
-      console.log("STRIPE_CREATE_SUCCESS", productCreated.name)
-    }
-    catch(e: any){
-      console.log("STRIPE_CREATE_ERROR", e.message)
-    }
-  })
-}
-
 export async function getProducts() {
   try{
     const StripeProducts = await stripe.products.list({

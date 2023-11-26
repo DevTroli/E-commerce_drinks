@@ -14,7 +14,7 @@ export default function Success({ params }: SucecssProps) {
 
   useEffect(() => {
     clearCart()
-  }, [])
+  }, [clearCart])
 
   return (
     <div className="container text-3xl my-10 space-x-4 flex flex-col items-center">
