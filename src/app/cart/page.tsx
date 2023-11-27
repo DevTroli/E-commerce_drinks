@@ -15,12 +15,17 @@ import {
 import { Loader, Minus, Plus, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CartEmpty } from "@/components/shop/cartEmpty";
+import { useRouter } from "next/navigation";
+
 
 export default function Cart() {
-  const { cartCount, cartDetails, addItem, decrementItem, clearCart , redirectToCheckout } = useShoppingCart();
+  const Router = useRouter();
+  const { cartCount, cartDetails, addItem, decrementItem, clearCart } = useShoppingCart();
   const [isCheckOut, setIsCheckoutOut] = useState(false);
 
-  async function handleCheckout() {
+  
+
+  async function RedirectToCheckout() {
     setIsCheckoutOut(true);
     const response = await fetch('/api/checkout', {
       method: 'POST',
@@ -30,9 +35,10 @@ export default function Cart() {
       body: JSON.stringify(cartDetails)
     })
 
-    const { id } = await response.json();
+    const data = await response.json();
+    
+    Router.push(data.url)
 
-    const result = await redirectToCheckout(id);
     setIsCheckoutOut(false);
   }
 
@@ -100,7 +106,7 @@ export default function Cart() {
       <Button
         variant={"default"}
         size={"default"}
-        onClick={handleCheckout}
+        onClick={() => RedirectToCheckout()}
         disabled={isCheckOut}
       >
         {isCheckOut ? (

@@ -795,6 +795,11 @@
     mkdirp "^2.1.6"
     path-browserify "^1.0.1"
 
+"@types/canvas-confetti@1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@types/canvas-confetti/-/canvas-confetti-1.6.0.tgz#c525f22f1042e73dec6a7e86c1f5bb0191c09fea"
+  integrity sha512-Yq6rIccwcco0TLD5SMUrIM7Fk7Fe/C0jmNRxJJCLtAF6gebDkPuUjK5EHedxecm69Pi/aA+It39Ux4OHmFhjRw==
+
 "@types/hoist-non-react-statics@^3.3.0":
   version "3.3.5"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.5.tgz#dab7867ef789d87e2b4b0003c9d65c49cc44a494"
@@ -1221,6 +1226,11 @@ caniuse-lite@^1.0.30001406, caniuse-lite@^1.0.30001538, caniuse-lite@^1.0.300015
   version "1.0.30001564"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001564.tgz#eaa8bbc58c0cbccdcb7b41186df39dd2ba591889"
   integrity sha512-DqAOf+rhof+6GVx1y+xzbFPeOumfQnhYzVnZD6LAXijR77yPtm9mfOcqOnT3mpnJiZVT+kwLAFnRlZcIz+c6bg==
+
+canvas-confetti@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/canvas-confetti/-/canvas-confetti-1.6.0.tgz#193f71aa8f38fc850a5ba94f59091a7afdb43ead"
+  integrity sha512-ej+w/m8Jzpv9Z7W7uJZer14Ke8P2ogsjg4ZMGIuq4iqUOqY2Jq8BNW42iGmNfRwREaaEfFIczLuZZiEVSYNHAA==
 
 chalk@5.2.0:
   version "5.2.0"
@@ -2478,6 +2488,11 @@ jiti@^1.19.1:
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.21.0.tgz#7c97f8fe045724e136a397f7340475244156105d"
   integrity sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==
 
+js-confetti@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/js-confetti/-/js-confetti-0.11.0.tgz#5eb56dc23cba54be98b71afdc69a28bec61880a2"
+  integrity sha512-Hc7I3VI4r4H0nq5q/oQK+JJwGoYRYVHK72fGk8E9Ay1dbh+aiZ9yl0yFp1K4oYeq7YFDQAndYChwqLPA3QWQuA==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -3107,6 +3122,14 @@ queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
+
+react-canvas-confetti@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/react-canvas-confetti/-/react-canvas-confetti-1.4.0.tgz#69a759e09024ff2cc8896739b8377182dee3c38d"
+  integrity sha512-ByBdSsNGUxlcJuOqSgbZw1VWNNO3b7njTmnuM1Y36mvwdCkCRs8rLkRAjn6MQK96LgWcfDVhr6ZT5olm2w8Zwg==
+  dependencies:
+    "@types/canvas-confetti" "1.6.0"
+    canvas-confetti "1.6.0"
 
 react-dom@^17.0.2:
   version "17.0.2"

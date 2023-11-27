@@ -6,7 +6,7 @@ import { Product } from "use-shopping-cart/core"
 
 export async function POST(request: NextRequest) {
   const cartDetails =  await request.json();
-  const baseUrl = request.headers.get("origin");
+  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'
   
   const stripeInventory = await stripe.products.list({
     expand: ['data.default_price'],
@@ -30,9 +30,24 @@ export async function POST(request: NextRequest) {
   const session = await stripe.checkout.sessions.create({
     line_items: line_items,
     mode: "payment",
-    payment_method_types: ["card","boleto", ],
+
+    payment_method_types: ["card","boleto"],
+    invoice_creation: {
+      enabled: true,
+      invoice_data: {
+        metadata: {
+          email: cartDetails.email
+        },
+        description: 'Drinkify',
+        footer: 'Todos os direitos reservados para Drinkify',
+      }
+    },
+    phone_number_collection: {
+      enabled: true
+    },
     success_url: `${baseUrl}/success/{CHECKOUT_SESSION_ID}`,
     cancel_url: `${baseUrl}/cart`,
+    allow_promotion_codes: true
   })
 
   return NextResponse.json(session,  );

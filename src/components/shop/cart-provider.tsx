@@ -10,10 +10,10 @@ const StripeKey = process.env.STRIPE_SECRET_KEY!
 export function AppCartProvider({ children }: CartProviderProps) {
   return (
     <CartProvider
-      shouldPersist={true}
-      stripe={StripeKey}
-      currency='BRL'
-      cartMode= 'checkout-session'
+    cartMode= 'checkout-session'
+    stripe={StripeKey}
+    shouldPersist={true}
+    currency='BRL'
     >
       {children}
     </CartProvider>
