@@ -4,9 +4,9 @@ import stripe  from "@/lib/stripe";
 import  { validateCartItems } from "use-shopping-cart/utilities"
 import { Product } from "use-shopping-cart/core"
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest, response: NextResponse) {
   const cartDetails =  await request.json();
-  const baseUrl = process.env.VERCEL_URL ?? 'https://drink-s-e-commerce.vercel.app/'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || request.headers.get("origin")
   
   const stripeInventory = await stripe.products.list({
     expand: ['data.default_price'],
